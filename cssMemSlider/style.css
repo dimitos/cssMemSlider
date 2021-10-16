@@ -223,13 +223,13 @@ input[name='radio'] {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   html {
     font-size: 1.2vw;
   }
 }
 
-@media screen and (max-width: 567px) {
+@media screen and (max-width: 568px) {
   html {
     font-size: 1.6vw;
   }
