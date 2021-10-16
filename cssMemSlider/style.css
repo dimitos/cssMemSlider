@@ -1,0 +1,264 @@
+/* ------- normalize ------- */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*:focus,
+*:hover,
+*:visited,
+*:active {
+  outline: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  border-style: none;
+  transform: translate3d(0px, 0px, 0.001px);
+}
+
+button,
+input {
+  font-family: inherit;
+  box-shadow: none;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+/* ------- end normalize ------- */
+
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #252829;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 1.8rem 2.5rem 2.7rem;
+}
+
+input[name='radio'] {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  box-sizing: initial;
+}
+
+.slide-list {
+  width: 100%;
+  height: 100%;
+  margin: 10rem 0 3.2rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 0.1rem solid #464646;
+  box-shadow: 0.7rem 0.8rem 1.4rem 0.3rem rgba(0, 0, 0, 0.7);
+}
+
+.slide-list-wr {
+  display: flex;
+  width: 500%;
+  height: 100%;
+}
+
+.slide {
+  width: 20%;
+  transition: all 0.5s ease;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+#radio1:checked ~ .slide-list .slide1 {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .slide-list .slide1 {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .slide-list .slide1 {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .slide-list .slide1 {
+  margin-left: -60%;
+}
+
+#radio5:checked ~ .slide-list .slide1 {
+  margin-left: -80%;
+}
+
+.slider-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 10rem;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.dote {
+  display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+  background: #75abfa;
+  border: 0.2rem solid #75abfa;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.bar:hover .dote {
+  background: #ffffff;
+  border-color: #ffffff;
+  transform: scale(1.05);
+}
+
+#radio1:checked ~ .slider-footer .bar1 .dote,
+#radio2:checked ~ .slider-footer .bar2 .dote,
+#radio3:checked ~ .slider-footer .bar3 .dote,
+#radio4:checked ~ .slider-footer .bar4 .dote,
+#radio5:checked ~ .slider-footer .bar5 .dote {
+  background: #242726;
+  border-color: #75abfa;
+}
+
+#radio1:checked ~ .slider-footer .bar1:hover .dote,
+#radio2:checked ~ .slider-footer .bar2:hover .dote,
+#radio3:checked ~ .slider-footer .bar3:hover .dote,
+#radio4:checked ~ .slider-footer .bar4:hover .dote,
+#radio5:checked ~ .slider-footer .bar5:hover .dote {
+  background: #242726;
+  border-color: #ffffff;
+  transform: scale(1.05);
+}
+
+#radio1:active ~ .slider-footer .bar1 .dote,
+#radio2:active ~ .slider-footer .bar2 .dote,
+#radio3:active ~ .slider-footer .bar3 .dote,
+#radio4:active ~ .slider-footer .bar4 .dote,
+#radio5:active ~ .slider-footer .bar5 .dote {
+  background: #777777;
+  border-color: #777777;
+}
+
+.captions {
+  display: flex;
+  flex: auto;
+  padding: 0 3rem 0 0;
+}
+
+.caption {
+  margin-top: 0.3rem;
+  font-family: 'Poppins';
+  font-size: 0;
+  line-height: 140%;
+  color: #ffffff;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#radio1:checked ~ .slider-footer .caption1,
+#radio2:checked ~ .slider-footer .caption2,
+#radio3:checked ~ .slider-footer .caption3,
+#radio4:checked ~ .slider-footer .caption4,
+#radio5:checked ~ .slider-footer .caption5 {
+  font-size: 1.8rem;
+  opacity: 1;
+}
+
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 0.91vw;
+  }
+}
+
+@media screen and (max-width: 812px) and (orientation: landscape) {
+  .slider {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 1.2vw;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  html {
+    font-size: 1.6vw;
+  }
+  .slider-footer {
+    flex-direction: column;
+  }
+  .captions {
+    padding: 0;
+    margin-top: 3rem;
+  }
+
+  .navigation {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 2.2vw;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  html {
+    font-size: 0.520836vw;
+  }
+
+  .container {
+    max-width: 110rem;
+  }
+}
