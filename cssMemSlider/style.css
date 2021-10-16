@@ -177,6 +177,15 @@ input[name='radio'] {
   transform: scale(1.05);
 }
 
+#radio1:active ~ .slider-footer .bar1 .dote,
+#radio2:active ~ .slider-footer .bar2 .dote,
+#radio3:active ~ .slider-footer .bar3 .dote,
+#radio4:active ~ .slider-footer .bar4 .dote,
+#radio5:active ~ .slider-footer .bar5 .dote {
+  background: #777777;
+  border-color: #777777;
+}
+
 .captions {
   display: flex;
   flex: auto;
